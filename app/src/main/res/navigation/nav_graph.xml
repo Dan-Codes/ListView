@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/frontPageFragment">
+
+    <fragment
+        android:id="@+id/frontPageFragment"
+        android:name="com.example.listview_homework4.FrontPageFragment"
+        android:label="Welcome" >
+        <action
+            android:id="@+id/action_frontPageFragment_to_aboutMe"
+            app:destination="@id/aboutMe"
+            app:enterAnim="@anim/nav_default_enter_anim" />
+        <action
+            android:id="@+id/action_frontPageFragment_to_listViewFragment"
+            app:destination="@id/listViewFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/aboutMe"
+        android:name="com.example.listview_homework4.AboutMe"
+        android:label="About Me" />
+    <fragment
+        android:id="@+id/listViewFragment"
+        android:name="com.example.listview_homework4.ListViewFragment"
+        android:label="Hottest Movies Out"
+        tools:layout="@layout/fragment_list_view" >
+        <action
+            android:id="@+id/action_listViewFragment_to_movieFragment"
+            app:destination="@id/movieFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/movieFragment"
+        android:name="com.example.listview_homework4.MovieFragment"
+        android:label="Movie"
+        tools:layout="@layout/fragment_movie" />
+</navigation>
